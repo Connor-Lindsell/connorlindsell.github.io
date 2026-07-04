@@ -1,5 +1,6 @@
 ---
 layout: post
+order: 90
 title: "Warman Challenge 2024"
 description: Designed and integrated a robotic system for the 2024 Warman Challenge, focusing on compact planetary actuators, control electronics, wiring, and reliable payload handling.
 skills:

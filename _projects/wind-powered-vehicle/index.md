@@ -1,5 +1,6 @@
 ---
 layout: post
+order: 100
 title: "Wind Powered Vehicle"
 description: Designed, built, and tested a wind-powered vehicle that used turbine, pulley, chassis, and gear-ratio optimisation to exceed the target payload-to-time performance.
 skills:

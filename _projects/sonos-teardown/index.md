@@ -1,5 +1,6 @@
 ---
 layout: post
+order: 80
 title: Sonos Era Speaker Teardown
 description: Conducted a detailed teardown analysis of a Sonos Era speaker, documenting internal components, driver configuration, enclosure design, PCB layout, and assembly choices for engineering reference.
 skills:

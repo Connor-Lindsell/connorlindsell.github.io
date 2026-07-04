@@ -1,5 +1,6 @@
 ---
 layout: post
+order: 70
 title: "Robotic Control System Simulation and Integration"
 description: Developed a C++ control system for simulated autonomous robotic platforms, using ROS 2, threaded mission logic, and modular controllers for aerial and ground robots.
 skills:

@@ -1,5 +1,6 @@
 ---
 layout: post
+order: 60
 title: "Stacked Planetary Gear Drive Robotic Actuator - REACH"
 description: Designed and tested a compact stacked planetary gearbox for a 6-DOF robotic arm, using additive manufacturing and torque testing to validate low-backlash robotic actuation.
 skills:

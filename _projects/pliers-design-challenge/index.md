@@ -1,5 +1,6 @@
 ---
 layout: post
+order: 30
 title: "Pliers Design Challenge for Additive Manufacturing"
 description: Designed, topology-optimised, 3D printed, and failure-tested a lightweight pair of pliers, improving strength while reducing mass through iterative DfAM refinement.
 skills:

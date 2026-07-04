@@ -1,5 +1,6 @@
 ---
 layout: post
+order: 20
 title: "Double Pipe Heat Exchanger with Parallel Flow Configuration"
 description: Modelled, simulated, optimised, and 3D printed a double-pipe heat exchanger with helical fins, improving thermal performance through iterative flow and heat-transfer analysis.
 skills:

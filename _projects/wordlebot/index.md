@@ -1,5 +1,6 @@
 ---
 layout: post
+order: 110
 title: "WordleBot: Reinforcement Learning and Robotic Path Planning"
 description: Autonomous UR3e Wordle-playing system using perception, game logic, PPO reinforcement learning, and pick-and-place execution. Connor's focus was the RL and path-planning side of the robotic manipulation pipeline.
 skills:

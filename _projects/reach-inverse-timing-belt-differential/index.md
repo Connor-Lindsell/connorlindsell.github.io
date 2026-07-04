@@ -1,5 +1,6 @@
 ---
 layout: post
+order: 50
 title: "Inverse Timing Belt Differential Actuator - REACH"
 description: Designed a compact inverse timing belt differential wrist actuator for the REACH robotic arm, adapting the mechanism in SolidWorks for modular fabrication and future testing.
 skills:
