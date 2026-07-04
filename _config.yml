@@ -13,11 +13,12 @@ title: Connor Lindsell's Portfolio # This is what shows up in the tab of the bro
 
 # Hero Section
 name: Connor Lindsell
-headline: Mechnaical and Mechatronic Undergartuate Engineer at Capral Alumninium 
+headline: Mechanical and Mechatronic Undergraduate Engineer at Capral Aluminium
 description: >- # dont remove this line. this will ignore all new lines until the next section
-  Write an awesome intro and discuss your highlights and qualification. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Engineering portfolio covering robotics, mechatronics, mechanical design,
+  electronics teardown, prototyping, and applied control work. This site is a
+  working collection of project case studies, with each project page capturing
+  the problem, my contribution, the technical approach, and the final outcome.
 
 # Place your profile image in /assets/images/profile-image/folder and edit the file name
 profile_image: ./assets/images/profile-image/avatar.jpeg
@@ -32,7 +33,7 @@ resume-url: https://drive.google.com/file/d/13Z3duVzh-gguPU5r03oJVEE6rV9rd3DS/vi
 
 external-links:    # input only your own url slug. The icons with missing entries will not appear.
   linkedin: test    # https://www.linkedin.com/in/{your url slug} 
-  github: leea12    # https://github.com/{your url slug} 
+  github: Connor-Lindsell    # https://github.com/{your url slug} 
   stackoverflow: test      # https://stackoverflow.com/users/{your url slug}
   medium:            # https://medium.com/@{your url slug} 
   x-twitter:   # https://x.com/{your url slug} 
