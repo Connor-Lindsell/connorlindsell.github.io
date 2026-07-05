@@ -55,7 +55,7 @@
   --step-1: clamp(1.25rem, 1.1rem + .6vw, 1.6rem);
   --step-2: clamp(1.6rem, 1.3rem + 1.2vw, 2.4rem);
   --step-3: clamp(2.2rem, 1.6rem + 2.6vw, 4rem);
-  --step-4: clamp(3.1rem, 1.5rem + 8vw, 8.75rem);
+  --step-4: clamp(2.4rem, 1.1rem + 5.5vw, 6rem);
 
   --space-1: .25rem;
   --space-2: .5rem;
@@ -402,17 +402,17 @@ a:hover {
   font-size: var(--step-4);
   color: var(--text-hi);
   font-weight: 900;
-  line-height: .92;
+  line-height: .95;
   margin-bottom: var(--space-4);
-  max-width: 10ch;
-  text-wrap: balance;
+  max-width: 12ch;
 }
 
 .hero__headline,
 .hero__subtitle {
-  font-size: var(--step-1);
+  font-size: clamp(1.0rem, .9rem + .35vw, 1.15rem);
   color: var(--text);
-  font-weight: 400;
+  font-weight: 300;
+  line-height: 1.55;
   margin-bottom: var(--space-4);
   max-width: 48ch;
 }
@@ -879,7 +879,7 @@ a:hover {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(180px, 280px);
   gap: var(--space-6);
-  align-items: center;
+  align-items: start;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   padding-block: var(--space-5);
@@ -887,10 +887,12 @@ a:hover {
 
 .home-about__media {
   --profile-size: 220px;
+  --profile-offset-y: 0px;
   --profile-x: 50%;
   --profile-y: 30%;
   width: min(100%, var(--profile-size));
   justify-self: end;
+  margin-top: var(--profile-offset-y);
 }
 
 .home-about__media img {
