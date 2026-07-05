@@ -16,21 +16,24 @@ layout: wrapper
 {% endif %}
 
 <main class="container section">
-    <div class="breadcrumb mono">
-        <a href="/projects/">PROJECTS</a> <span class="sep">/</span> <span>{{ page.title | truncate: 42 | upcase }}</span>
-    </div>
-
     {% if image_path %}
         <figure class="project-header-image reveal">
+            <div class="breadcrumb breadcrumb--overlay mono">
+                <a href="/projects/">PROJECTS</a> <span class="sep">/</span> <span>{{ page.title | truncate: 42 | upcase }}</span>
+            </div>
             <img
                 src="{{ image_path | relative_url }}"
                 alt="{{ page.title }} image"
                 onerror="this.onerror=null;this.src=this.src.replace('.webp','.png').replace('.png','.webp');"
             >
         </figure>
+    {% else %}
+        <div class="breadcrumb mono">
+            <a href="/projects/">PROJECTS</a> <span class="sep">/</span> <span>{{ page.title | truncate: 42 | upcase }}</span>
+        </div>
     {% endif %}
 
-    <h1>{{ page.title }}</h1>
+    <h1 class="project-title">{{ page.title }}</h1>
     <div class="dim-rule"></div>
 
     <div class="datasheet">

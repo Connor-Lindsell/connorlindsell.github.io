@@ -703,13 +703,37 @@ a:hover {
   color: var(--line-strong);
 }
 
+.breadcrumb--overlay {
+  position: absolute;
+  z-index: 1;
+  top: var(--space-4);
+  left: max(var(--space-4), calc((100vw - 1100px) / 2 + var(--space-4)));
+  max-width: calc(100vw - (var(--space-4) * 2));
+  margin-bottom: 0;
+  padding: 8px 12px;
+  color: var(--accent-hi);
+  background: rgba(14, 17, 20, .72);
+  border: 1px solid rgba(77, 163, 255, .42);
+  border-radius: 999px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .28);
+  backdrop-filter: blur(10px);
+}
+
+.breadcrumb--overlay a {
+  color: var(--accent);
+}
+
+.breadcrumb--overlay .sep {
+  color: rgba(133, 194, 255, .55);
+}
+
 .project-header-image {
-  width: 100%;
+  position: relative;
+  width: 100vw;
   aspect-ratio: 16 / 7;
+  margin-left: calc(50% - 50vw);
   margin-bottom: var(--space-5);
   overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
   background: var(--bg-1);
 }
 
@@ -717,6 +741,10 @@ a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.project-title {
+  margin-bottom: var(--space-3);
 }
 
 .datasheet {
@@ -734,6 +762,13 @@ a:hover {
 @media (max-width: 600px) {
   .project-header-image {
     aspect-ratio: 4 / 3;
+  }
+
+  .breadcrumb--overlay {
+    top: var(--space-3);
+    left: var(--space-3);
+    max-width: calc(100vw - (var(--space-3) * 2));
+    border-radius: var(--radius);
   }
 
   .datasheet__row {
