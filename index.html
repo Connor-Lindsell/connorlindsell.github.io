@@ -6,18 +6,43 @@ hero: true
 {% include hero.html %}
 
 <main class="container">
+    <section class="section" id="about">
+        {% include section-heading.html number="01" title="About Me" %}
+        <div class="home-about reveal">
+            <div class="home-about__media">
+                <img src="/assets/images/profile-image/Image.jpg" alt="{{ site.name }}">
+            </div>
+            <div class="home-about__copy">
+                <p>
+                    I'm {{ site.name }}, a mechanical and mechatronic engineer working across robotics,
+                    mechanical design, and applied manufacturing. My work sits where ideas become
+                    hardware: from concept sketches through CAD, simulation, prototyping, and testing.
+                </p>
+                <p>
+                    The projects here span robotics, mechatronics, mechanical design, prototyping,
+                    and applied control, drawn from industry, university, and personal work.
+                </p>
+                <p>
+                    I care about designs that hold up once they leave the CAD environment:
+                    mechanisms that survive real tolerances, parts that assemble cleanly, and
+                    systems validated with evidence rather than assumptions.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <section class="section" id="projects">
-        {% include section-heading.html number="01" title="Featured Projects" %}
+        {% include section-heading.html number="02" title="Featured Projects" %}
         {% include featured-projects.html %}
     </section>
 
     <section class="section" id="skills">
-        {% include section-heading.html number="02" title="Skills" %}
+        {% include section-heading.html number="03" title="Skills" %}
         {% include skills.html %}
     </section>
 
     <section class="section" id="contact">
-        {% include section-heading.html number="03" title="Contact" %}
+        {% include section-heading.html number="04" title="Contact" %}
         {% include contact.html %}
     </section>
 </main>
