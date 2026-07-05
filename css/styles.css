@@ -55,7 +55,8 @@
   --step-1: clamp(1.25rem, 1.1rem + .6vw, 1.6rem);
   --step-2: clamp(1.6rem, 1.3rem + 1.2vw, 2.4rem);
   --step-3: clamp(2.2rem, 1.6rem + 2.6vw, 4rem);
-  --step-4: clamp(2.4rem, 1.1rem + 5.5vw, 6rem);
+  --step-4: clamp(2.4rem, 1.1rem + 5.5vw, 7rem);
+  --copy-small: clamp(.9rem, .84rem + .25vw, 1rem);
 
   --space-1: .25rem;
   --space-2: .5rem;
@@ -409,7 +410,7 @@ a:hover {
 
 .hero__headline,
 .hero__subtitle {
-  font-size: clamp(1.0rem, .9rem + .35vw, 1.15rem);
+  font-size: var(--copy-small);
   color: var(--text);
   font-weight: 300;
   line-height: 1.55;
@@ -486,7 +487,7 @@ a:hover {
   }
 
   .hero__subtitle {
-    font-size: var(--step-0);
+    font-size: var(--copy-small);
   }
 
   .scroll-cue {
@@ -560,6 +561,8 @@ a:hover {
   -webkit-box-orient: vertical;
   overflow: hidden;
   color: var(--text);
+  font-size: var(--copy-small);
+  line-height: 1.55;
 }
 
 .project-card__chips {
@@ -700,6 +703,22 @@ a:hover {
   color: var(--line-strong);
 }
 
+.project-header-image {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  margin-bottom: var(--space-5);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-1);
+}
+
+.project-header-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .datasheet {
   border-bottom: 1px solid var(--line);
 }
@@ -713,6 +732,10 @@ a:hover {
 }
 
 @media (max-width: 600px) {
+  .project-header-image {
+    aspect-ratio: 4 / 3;
+  }
+
   .datasheet__row {
     grid-template-columns: 1fr;
     gap: var(--space-1);
@@ -917,6 +940,8 @@ a:hover {
 }
 
 .home-about__copy p {
+  font-size: var(--copy-small);
+  line-height: 1.55;
   margin-bottom: var(--space-3);
 }
 

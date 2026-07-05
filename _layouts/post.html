@@ -10,11 +10,25 @@ layout: wrapper
         {% assign current_index = forloop.index0 %}
     {% endif %}
 {% endfor %}
+{% if page['main-image'] %}
+    {% assign folder_path = page.path | split: "/" | slice: 0, 2 | join: "/" %}
+    {% assign image_path = "/" | append: folder_path | append: page['main-image'] %}
+{% endif %}
 
 <main class="container section">
     <div class="breadcrumb mono">
         <a href="/projects/">PROJECTS</a> <span class="sep">/</span> <span>{{ page.title | truncate: 42 | upcase }}</span>
     </div>
+
+    {% if image_path %}
+        <figure class="project-header-image reveal">
+            <img
+                src="{{ image_path | relative_url }}"
+                alt="{{ page.title }} image"
+                onerror="this.onerror=null;this.src=this.src.replace('.webp','.png').replace('.png','.webp');"
+            >
+        </figure>
+    {% endif %}
 
     <h1>{{ page.title }}</h1>
     <div class="dim-rule"></div>
@@ -47,18 +61,6 @@ layout: wrapper
         </div>
         {% endif %}
     </div>
-
-    {% if page['main-image'] %}
-        {% assign folder_path = page.path | split: "/" | slice: 0, 2 | join: "/" %}
-        {% assign image_path = "/" | append: folder_path | append: page['main-image'] %}
-        <div class="model-frame">
-            <img
-                src="{{ image_path | relative_url }}"
-                alt="{{ page.title }} image"
-                onerror="this.onerror=null;this.src=this.src.replace('.webp','.png').replace('.png','.webp');"
-            >
-        </div>
-    {% endif %}
 
     {% if page.model %}
         {% include model-viewer.html src=page.model caption=page.title %}

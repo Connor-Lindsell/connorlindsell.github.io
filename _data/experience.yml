@@ -9,37 +9,54 @@
 #   summary    : 1-3 sentence description
 #   bullets    : optional list of supporting points
 
-- date_range: "2024 — Present" # TODO(Connor): confirm actual start date at Capral Aluminium
+- date_range: "DEC 2025 — Present"
   title: "Undergraduate Engineer"
   org: "Capral Aluminium"
-  type: work
+  type: Industry Internship
   summary: >-
     Working as an undergraduate mechanical and mechatronic engineer within Capral's
     manufacturing operations, gaining exposure to aluminium extrusion processes,
     production engineering, and applied manufacturing problem-solving in an
     industrial setting.
   bullets:
+    - Data/Simulation driven mechanical design for new projects, existing infastructure 
+      upgrades and maintanence projects. Applying DFM and DFA design intent to ensure project 
+      are created effeciently, within budget and functional fopr the given task.
     - "Exposure to aluminium extrusion and manufacturing engineering workflows"
-    - "Cross-functional collaboration with production and technical teams"
-    - "Applying engineering fundamentals to real industrial processes" # TODO(Connor): confirm specific responsibilities/projects to list here
+    - "Cross-functional collaboration with multidisiplinary teams both technical and non technical"
+    - "Applying engineering fundamentals to real industrial processes" 
 
-- date_range: "2023 — Present" # TODO(Connor): confirm when you joined the REACH student team
-  title: "Mechanical Design Engineer"
-  org: "REACH Student Team"
-  type: team
+- date_range: "APR 2025 — MAR 2026" 
+  title: "Disability Support Worker"
+  org: "What Ability"
+  type: Non Technical Work
   summary: >-
-    Contributing mechanical design work to REACH, a student robotics team developing
-    a robotic arm and prosthetic-adjacent actuation technology, with a focus on
-    compact, low-backlash actuator mechanisms for robotic joints.
+    Providing one-on-one support for neurodiverse clients, designing activities that build independence 
+      and well-being. The role requires rapid problem-solving, responsive decision-making, and an 
+      integrated approach to adapting in dynamic, fast-paced environments
   bullets:
-    - "Designed a stacked planetary gear drive robotic actuator, additively manufactured and torque-tested to ~41-50% efficiency"
-    - "Designed a compact inverse timing belt differential wrist actuator for the REACH robotic arm, modelled and adapted in SolidWorks for modular 3D-printed fabrication"
-    - "Iterative design refinement informed by prototyping and mechanical testing" # TODO(Connor): confirm official team name/scope (robotics / prosthetics) and role title
+   - Crisis Prevention trained in verbal de-escalation skills and non-restrictive and restrictive intervention strategies from Crisis Prevention Institution
+   - Extremely skilled with communication having experienced with multiplue forms of communication in difficult and emergency situations
 
-- date_range: "2022 — Present" # TODO(Connor): confirm enrolment year
+- date_range: "APR 2025 — MAR 2026"
+  title: "Office Manager"
+  org: "Essential Health Chiropractic"
+  type: Non Technical Work
+  summary: >-
+    I oversee operations at a busy chiropractic clinic, where I’ve introduced new processes and 
+      implemented software automation to enhance the business's efficiency and consistency. These 
+      improvements have directly supported stronger client retention and smoother workflows. 
+      I also lead team meetings, training sessions, and team-building activities, helping to create 
+      a collaborative and accountable workplace culture.
+  bullets:
+   - "Led front-desk workflows, appointment coordination, and day-to-day task delegation across a small clinic team"
+   - "Facilitated team meetings, staff training, and process updates to improve accountability and consistency"
+   - "Implemented software automation and operational procedures that reduced manual admin work and improved client follow-up"
+
+- date_range: "2022 — Present" 
   title: "Bachelor of Engineering (Honours), Mechanical and Mechatronic Engineering"
-  org: "University of Technology Sydney (UTS)" # TODO(Connor): confirm this is the correct institution
-  type: education
+  org: "University of Technology, Sydney (UTS)" 
+  type: Education
   summary: >-
     Undergraduate studies covering mechanical design and CAD, robotics and
     intelligent systems, manufacturing and prototyping, simulation and testing,
@@ -47,4 +64,7 @@
     robotics projects.
   bullets:
     - "Coursework spanning mechanical design, robotics (ROS 2, MoveIt 2), CFD/FEA simulation, and manufacturing"
-    - "Applied learning through personal and team projects (REACH, WordleBot)" # TODO(Connor): confirm degree title wording and expected graduation date
+    - "Applied learning through personal and team projects (REACH, WordleBot)" 
+    - "Designed compact robotic actuators in SolidWorks for REACH, including stacked planetary gearing and timing-belt differential mechanisms"
+    - "Built ROS 2 and MoveIt 2 control workflows for WordleBot, connecting RL task sequencing to UR3e pick-and-place execution"
+    - "Validated engineering designs through prototyping, simulation, test data, and iteration across mechanical, thermal, RF, and robotics projects"
