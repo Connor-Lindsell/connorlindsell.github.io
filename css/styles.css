@@ -230,7 +230,7 @@ nav .mobile-nav {
     width: 400px;
     aspect-ratio: 1/1;
     object-fit: cover;
-    object-position: 50% 30%;
+    object-position: 50% 20%;
     border-radius: 50%;
 }
 
