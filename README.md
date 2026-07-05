@@ -1,327 +1,186 @@
-# Portfolio For Current and Aspiring Engineers
-How do you stand out and get hired in today's market? A strong portfolio demonstrates your technical skills and problem-solving in ways a resume just can't, giving you a clear advantage in your job search. Here, Lowinertia is prociding you all the tools you need to get started! Check out <a href="https://lowinertia.com/portfolio/stanley" target="_blank"> the demo page</a> made with free portfolio builder at lowinertia.com. Set up your portfolio within 2 minutes with smart resume import. Follow along the instruction below to setup and personalize your page. 
+# Connor Lindsell — Engineering Portfolio
 
-## There are two option:
-### 1. Self-host on github : free-to-engineer template (<a href="https://lowinertia.github.io/" target="_blank"> Demo page </a>)
+Source for [connor-lindsell.github.io](https://connor-lindsell.github.io), a Jekyll-based portfolio site for Connor Lindsell (mechanical and mechatronic engineering — robotics, mechanical design, and applied manufacturing).
 
-**NOTE:** If you are familiar with Jekyll and Github workflows, the initial setup would take about 30 minutes. If you are not familiar with Github and config and markdown files, this could be challenging and may take more than an hour.
+## Overview
 
-### 2. No-code Portfolio Builder at [lowinertia.com](https://lowinertia.com)
+- **Framework:** [Jekyll 3.10](https://jekyllrb.com/) via the `github-pages` gem, so the build matches what GitHub Pages runs in production.
+- **Hosting / deploy:** GitHub Pages, built and deployed by GitHub Actions on every push to `main` (see [Deployment](#deployment)).
+- **Design:** a custom, hand-built design system — a dark, washed-grey/blue-accent, technical-minimalist theme (self-hosted Inter + JetBrains Mono, datasheet-style project pages, CSS-only scroll reveals). There is no `colors:` theming config; the look lives entirely in `css/styles.css`.
+- **Content model:** each project is a page in the `_projects` collection (`/projects/<slug>/`), rendered through `_layouts/post.html`, with an about page (`about.md`) driven by an experience-timeline data file.
 
-Portfolio builder made for engineers with 2 min onboarding with smart resume import. Vist [lowinertia.com](https://lowinertia.com) to find out more. Enjoy integrated tools such as rich text editor, interactive CAD presenter, PDF export, and engineering notebook. Highly recommended for engineers in mechanical, electrical, aerospace, robotics, mechatronics, and civil disciplines. 
+This repo started from the [Free-To-Engineer](https://github.com/leea12/freeToEngineer) portfolio template (© [lowinertia.com](https://lowinertia.com), CC BY 4.0) and has since been fully redesigned — see [Credits](#credits).
 
+## Local development
 
-# free-to-engineer-portflio-template instructions
+Prerequisites: Ruby (with Bundler) — no Node/JS build step is required.
 
-### 1. Setting Up Your Page on GitHub (5 min)
-- [Getting Started](#getting-started)
-- [Setup GitHub Account](#setup-github-account)
-- [Use the template](#Use-the-template)
+```sh
+bundle install
+bundle exec jekyll serve
+```
 
+Then open <http://localhost:4000>. Jekyll watches the source and rebuilds on save; restart the server if you edit `_config.yml`.
 
-### 2. Personalizing Your Portfolio (10+ min)
-- [Set Up Your Profile](#set-up-your-profile)
-  - [Open `_config.yml`](#open-_configyml)
-- [Adding Projects](#adding-projects)
-  - [Creating a Markdown File in GitHub](#creating-a-markdown-file-in-github)
+## Site configuration (`_config.yml`)
 
-### 3. Understanding Markdown for Your Project Page
-- [YAML Frontmatter](#yaml-frontmatter)
-- [Adding Contents](#adding-contents)
-  - [Section Title](#section-title)
-  - [Sub-Section Title](#sub-section-title)
-  - [Adding a New Line](#adding-a-new-line)
-  - [Adding a Horizontal Line](#adding-a-horizontal-line)
-  - [Embedding Images](#embedding-images)
-  - [Embedding YouTube Video](#embedding-youtube-video)
-  - [Adding Bold Text](#adding-bold-text)
-  - [Adding Italic Text](#adding-italic-text)
-  - [Adding Ordered List](#adding-ordered-list)
-  - [Adding Unordered List](#adding-unordered-list)
-  - [Adding Code Block](#adding-code-block)
-  - [Adding External Links](#adding-external-links)
-  - [Adding Block Quote](#adding-block-quote)
-  - [Adding Table](#adding-table)
+| Key | Purpose |
+|---|---|
+| `title` | Browser tab title. |
+| `tagline` | Short line used by the SEO tag (`{% seo %}`) instead of the full `description`. |
+| `name` | Displayed as your name in the hero. |
+| `headline` | One-line role/title shown under your name. |
+| `description` | Longer hero paragraph (multi-line block scalar — keep the `>-`). |
+| `profile_image` | Path to the profile photo used on `/about/`. |
+| `resume-url` | External link (e.g. Google Drive) or a path to a PDF under `assets/resume/`. Used by the "View Resume" button. |
+| `external-links` | Social/profile icon slugs (`linkedin`, `github`, `stackoverflow`, `medium`, `x-twitter`, `threads`, `instragram`, `youtube`, `discord`, `bluesky`). Enter only the **username/slug**, not the full URL. **Any entry left blank has its icon hidden** — only platforms with a value show up in the hero. |
+| `skills` | List of `{ category, tools: [...] }` blocks rendered as the skills section. Indentation must be exact (2 spaces per nesting level) or the YAML won't parse. |
+| `formspree-key` | Powers the contact form. Create a form at [formspree.io](https://formspree.io/), then paste the **8-character form id** (the part after `/f/` in your form's endpoint URL) in place of `YOUR_FORM_ID`. Until this is set, the contact form has nowhere to submit to. |
 
+Build-related keys below the `#### Build settings` divider (`collections`, `markdown`, `kramdown`, `plugins`, `include`) generally shouldn't need to change.
 
+## Adding a project
 
+1. Create `_projects/<slug>/index.md`. Co-locate any images/videos for that project in the same folder.
+2. Add front matter:
 
-## Getting Started:
-
-### Setup GitHub Account
-1. **Visit GitHub**: If you don't have an account, go to [GitHub](https://github.com/) and sign up.
-2. **Create an Account**: Fill out the registration form with your preferred username, email, and password.
-3. **Verify Your Email**: Check your email to verify your account.
-
-### Use the template
-1. **Navigate to FreeToEngineer Repository**: Go to the repository where this portfolio template is [hosted](https://github.com/leea12/freeToEngineer)
-2. **Use the template**: Click the "Use this template" button at the top right of the page. Then, choose create a new repository. This creates a copy under your GitHub account. If you can also click on the "star", it will help the template to get visibility to many others!
-
-   ![GitHub Use Template](/assets/readme/github-use-template.png)
-
-3. **[IMPORTANT] Name the repository**: in the "Repository name" field, type in `{your github id}.github.io`.This is also the url of your portfolio. You can use your custom domain as well. (change in the setting later)
-
-   ![GitHub Use Template](/assets/readme/github-name-repository.png)
-4. Click "Create repository"
-5. **That's it!** Now, you have a portfolio webiste @ [your id].github.io. You may have to wait for up to 1 minute for github to finish building.
-6. **[Good to know]** you can see the status of your website by going to settings - pages.
-   ![GitHub Use Template](/assets/readme/github-pages.png)
-
-## Set up Your profile
-
-### Open `_config.yml`
-This file contains the configuration settings for your site. Here's what you might want to change: 
-After you are done. just click **"commit chages"** to apply. Give a minute or so for github to build your website.
-
-
-- **Site Title**: Change the `title:` this is what shows up in the tab of the browser on your site
-- **Name**: Change the `name:` your name will show up as seen above
-- **Description**: Update the `description:` with a brief overview of your highlights and qualification
-- **profile_image**: place your profile image in assets/profile folder and update the directory
-- **Resume-url**: You can either link to externally stored pdf (ex. google drive) or save the pdf under assets/pdf/ folder and enter the directory  
-
-![GitHub Use Template](/assets/readme/main-page.png)
-
-<br>
-
-- **External Links**: link your external accounts (linkedin, github, stackoverflow, medium, etc)
-![GitHub Use Template](/assets/readme/external-link.png) 
-Only the icons for the accounts that you enter will appear.
-*Example*:
-  ```yaml
-    external-links:    # input only your own url slug. The icons with missing entries will not appear.
-      linkedin: johndoe1       # https://www.linkedin.com/in/{your url slug} 
-      github: johndoe1         # https://github.com/{your url slug} 
-      stackoverflow: johndoe1  # https://stackoverflow.com/users/{your url slug}
-  ```
-
-
-- **Skills**: you can list your skills by category. It will  show up like below. Be careful with the identation.
-![GitHub Use Template](/assets/readme/skills.png) 
-  *Example*:
-    ```yaml
-      skills:
-        - category: 3D Modeling
-          tools:
-          - Onshape
-          - Solidworks
-          - Creo
-          - Fusion 360 
-        
-        - category: Prototyping
-          tools:
-          - SLA
-          - CNC
-          - FDM
-          - SLS
-          - DMLS
-          - PolyJet Printing
-          - Vacuum Casting
-    ```
-- **Contact Form**: you can set up the contact form to send the response to your email using [formspree](https://formspree.io/). You just need to sign up and create a new form. Then, add the 8-digit endpoint key!
- 
-  ![formspreeimage](/assets/readme/formspree.png)
-
-  ```yaml
-  formspree-key:   https://formspree.io/f/{8-digit key}
-  ```
-
-- **(optional)** you chan change your color theme by inputting color hex code for a few variables. Feel free to be creative!
-  ```yaml
-  colors: # this is the basic theme
-    text: "##1a1c20"
-    border: "#ddd"
-    link: "#4a76ee"
-    highlight: "#0c0cf2"
-    background: "#ffffff"
-    light_background: "#f3f5fb"
-  ```
-  There is a few suggested themes in `_config.yml`
-  - **mint green**
-  ![GitHub Use Template](/assets/readme/mint-green.png) 
-  - **lemon**
-  ![GitHub Use Template](/assets/readme/lemon.png) 
-  - **cotton-candy**
-  ![GitHub Use Template](/assets/readme/cotton-candy.png) 
-
-## Adding projects
-For each project, you need to create a markdown file within _projects folder. I recommend created a folder for each project so that it is easy to organize image files that you may want to add. To get started, follow the below steps.
-
-#### Creating a markdown file in Github
-1. Go to **_project** folder. Make sure you are in the correct level.
-![GitHub Use Template](/assets/readme/go-to-project-directory.png) 
-2. In the right side of the screen, click add file - create new file.  
-![GitHub Use Template](/assets/readme/create-new-file.png) 
-3. in the available field, enter the name of the folder: **{your-project-name}** then hit "/". This will create a folder for the project.   
-![GitHub Use Template](/assets/readme/enter-folder-name.png) 
-4. create a markdown file by entering index.md.   
-![GitHub Use Template](/assets/readme/index-md.png) 
-5. In the text field paste the below "front-matter" template and fill out the title, description, skills, and name of the main project image that you want to use. This is the summary of the project that will be used to display the project in the main page. **Be careful** not to leave any space before the front matter deliminators "---". It causes syntax error, and  your page will not be built.
-
-    ```md
-    ---
-    layout: post
-    title: project title
-    description:  short description of the project
-    skills: 
-    - skill 1
-    - skill 2
-    main-image: /project.webp 
-    ---
-    ```
-6. then click **Submit changes** to create the file.
-7. Upload your image in the same folder by clicking **Add file - upload files**.
-  
-![GitHub Use Template](/assets/readme/create-new-file.png) 
-
-8. Drag your image file, then click **commit changes**.
-    
-![GitHub Use Template](/assets/readme/upload-files.png) 
-
-9. Allow a minute or so for the build. It will create a project section that looks like this below.
-![GitHub Use Template](/assets/readme/project-section.png) 
-
-### Understanding markdown file your project page
-If you want to add addtional details, you can go back to the index.md file and add more contents below the front matter. It will be helpful if you become familiarized with markdown syntax. If you are interested in learning, see [markdown guide](https://www.markdownguide.org/cheat-sheet/). I set up a couple styling to allow you to embed multiple images and video easily and become responsive for mobile view. See the [demo](https://leea12.github.io/)) project. You can also add code blocks, blockquote, and tables. 
-
-#### YAML frontmatter
-YAML frontmatter gets pulled by the site to fill contents for the summary section of your project which gets displayed in the main index page and top section of the project page. 
-
-```markdown
+```yaml
 ---
 layout: post
-title: Super Heavy Booster Catch (Demo Only)
-description:  (I have never been employed by / affiliated with SpaceX. This is for demo use only) 
-    Developing the Super Heavy booster catch project involves designing a robust launch tower with "chopstick" arms, advanced control systems for precise booster alignment, and integrating sophisticated software for real-time trajectory adjustments and structural engineering to handle immense forces.
-skills: 
-  - Structural analysis
-  - Aerodynamic design
-  - Propulsion system integration
-  - Control Algorithem 
-  - Welding
-  - Metal forming
-  - Thermal simulation
-
-main-image: /project2.jpg
----
-```
-#### Adding contents
-use "## (title)" as the title of each section
-## Section title
-```markdown
-## section title
-```
-
-### sub-section title
-Use this to have subsection if needed
-```markdown
-### sub-section title
-```
-
-#### Adding a new line
-you can add 2 spaces "  " or <br> to start a new line
-```markdown
-<br>
-```
-
-#### Adding a horizontal line
-you can add a horizontal line to separate fields by using "---"
-```markdown
+order: 10
+title: Project title
+description: One or two sentence summary shown on cards and the datasheet block.
+skills:
+  - Skill one
+  - Skill two
+main-image: /project.webp
+featured: true
 ---
 ```
 
-#### Embedding images 
-Add images using the following format. You can put multiple images in a single row by putting in multiple entries for "images=". You can also overide the size of the all images in the single row setting the height in pixel.
-{% include image-gallery.html images="{image1 path}, {image2 path}" height="400"%}
+| Key | Required | Notes |
+|---|---|---|
+| `layout` | Yes | Always `post`. |
+| `order` | Yes | Integer used to sort projects (ascending) on `/projects/` and for prev/next navigation on the project page. |
+| `title` | Yes | Shown on project cards, the breadcrumb, and the `<h1>` on the project page. |
+| `description` | Yes | Shown on project cards and in the "Overview" row of the project-page datasheet. |
+| `skills` | Yes | List of tags. Cards show the first 4 with a `+N` overflow chip; the project page shows the full list as chips. |
+| `main-image` | Yes | Filename **relative to the project's own folder** (e.g. `/robot-pick-place-still.jpg`), not a site-root path. If both a `.webp` and `.png` exist, an `onerror` fallback swaps extensions automatically if one 404s. |
+| `featured` | No | `true` pins the project into the homepage's featured grid. If no projects set `featured: true`, the homepage falls back to the first 3 by `order`. |
+| `published` | No | Set to `false` to hide a project from both the featured grid and the `/projects/` listing without deleting it. |
+| `model` | No | Path to a `.glb`/`.gltf` file — renders an interactive 3D viewer above the article body. See [3D CAD model viewer](#3d-cad-model-viewer). |
+| `role` | No | Shows a "Role" row in the project-page datasheet. |
+| `year` | No | Shows a "Year" row in the project-page datasheet. |
 
-```markdown
-{% include image-gallery.html images="project2.jpg" height="400" %}
-```
-#### Embedding youtube video
-Add youtube video using the following format
-{% include youtube-video.html id="{11-digit id}" autoplay= "false"%}
-```markdown
-{% include youtube-video.html id="{11-digit id}" autoplay= "false"%}
-```
-This is where you get the 11-digit id  
+1. Write the body in standard Markdown below the front matter. Two content includes are available:
 
-![image](https://github.com/user-attachments/assets/4ffc509a-9e22-40bc-b503-421443ab2b66)
+   - **Image gallery** — comma-separated filenames relative to the project folder; multiple images in one call lay out as a row. Includes the same webp/png fallback swap as `main-image`.
 
-#### Adding bold text
-add bold text by wrapping with "**"
-```markdown
-this is how you input **bold text**
-```
+     ```liquid
+     {% include image-gallery.html images="photo1.jpg, photo2.png" height="350" %}
+     ```
 
-#### Adding italic text
-add italic text by wrapping with "*"
-```markdown
-Italicized text is the *cat's meow*.
-```
+   - **YouTube embed** — pass the 11-character video id from the video's URL.
 
-### adding underline
-underline is not supported in markdown, but you can still use html within markdown
-```
-<u>This text is underlined</u>
-```
+     ```liquid
+     {% include youtube-video.html id="dQw4w9WgXcQ" autoplay="false" %}
+     ```
 
-#### Adding ordered list
-```markdown
-1. First item
-2. Second item
-3. Third item
-4. Fourth item
-```
-1. First item
-2. Second item
-3. Third item
-4. Fourth item
+   Regular Markdown extras also work: tables, fenced code blocks (syntax-highlighted via Rouge/kramdown — see `css/syntax.css`), blockquotes, and inline HTML (e.g. `<video>` tags, as used in `_projects/wordlebot/index.md`).
 
-#### Adding unordered list
-```markdown
-- First item
-- Second item
-- Third item
-- Fourth item
-```
-- First item
-- Second item
-- Third item
-- Fourth item
+## 3D CAD model viewer
 
-#### Adding code block
-To add a code block wrap your script with ```. Adding the language after ''' will activate sytax highlighting.
-![image](https://github.com/user-attachments/assets/8b8a6c6a-1599-4b03-bcc3-b087bc0f5c49)
+3D models are rendered with the [`<model-viewer>`](https://modelviewer.dev/) web component (loaded from a CDN in `_includes/model-viewer.html`), which supports orbit/zoom via mouse or touch and auto-rotation when idle.
 
-```python
-def start()
-  print("time to start!")
-```
+There are two ways to embed a model:
 
-#### Adding external links
-to add extra links, wrap the text in "[ ]" then add the add the hyperlink wrappted by "( )"
-```markdown
-[Wikipedia](https://en.wikipedia.org)
-```
-#### Adding block quote
-To add a blockquote add ">" at the beginning of the text
-```markdown
-> A blockquote would look great if you need to highlight something
-```
-> A blockquote would look great if you need to highlight something
+- **Front matter** — set `model: /path/to/file.glb` on a project page; it renders automatically above the article content, captioned with the page title.
+- **Inline, anywhere in a project body** — include it directly, wrapped in `{% raw %}...{% endraw %}` if you're pasting this literally into a Markdown file that might otherwise try to evaluate it:
 
-#### Adding table
-To add a table, use the following format
-```markdown
-| Header 1 | Header 2 |
-|----------|----------|
-| Row 1, Col 1 | Row 1, Col 2 |
-| Row 2, Col 1 | Row 2, Col 2 |
-```
-| Header 1 | Header 2 |
-|----------|----------|
-| Row 1, Col 1 | Row 1, Col 2 |
-| Row 2, Col 1 | Row 2, Col 2 |
+  ```liquid
+  {% include model-viewer.html src="/assets/models/part.glb" caption="ASSEMBLY — REV C" %}
+  ```
 
-** make sure to leave a line betwen the table and the header
+  `src` accepts an absolute site path (`/assets/...`), a full URL, or (inside a project page) a filename relative to that project's folder. `caption`, `alt`, and `poster` (a preview image shown before the model loads) are all optional.
 
+**Exporting a GLB from CAD:** most MCAD tools don't export GLB directly.
+
+1. Export the part/assembly as **STEP** from SolidWorks, Inventor, etc.
+2. Convert STEP → GLB using **Fusion 360** (import the STEP, then "Export" as GLB/OBJ), **Blender** (import STEP via a STEP-import add-on, then `File > Export > glTF 2.0`), or a dedicated converter such as CAD Exchanger.
+3. Keep the exported file small — aim for **under ~5 MB** — and place it in `assets/models/` or directly in the project's own folder.
+
+A working example lives at `assets/models/sample.glb`, wired up on the temporary `/model-test/` page (`model-test.html`, not linked from navigation). Delete `model-test.html` once real project models are in place and the viewer has been confirmed working on an actual project page.
+
+## Experience timeline
+
+Edit `_data/experience.yml`. Entries render newest-first via `_includes/timeline.html` on `/about/` (`about.md`).
+
+| Field | Description |
+|---|---|
+| `date_range` | Free-text range, e.g. `"2024 — Present"`. |
+| `title` | Role, position, or qualification title. |
+| `org` | Organisation, team, or institution. |
+| `type` | `work`, `team`, or `education` — shown as an uppercase chip next to `org`. |
+| `summary` | 1–3 sentence description. |
+| `bullets` | Optional list of supporting points. |
+
+The current entries contain several `TODO(Connor)` comments (start dates, team name/scope, institution/degree wording) — confirm and remove these before treating the timeline as final.
+
+## Design system
+
+Tokens live at the top of `css/styles.css` (`:root`), pure CSS, no Liquid/build step involved.
+
+**Palette** (dark, washed grey with a single blue accent):
+
+| Token | Hex | Use |
+|---|---|---|
+| `--bg-0` | `#0e1114` | Page background. |
+| `--bg-1` | `#15181c` | Slightly raised surfaces. |
+| `--bg-2` | `#1c2126` | Further-raised surfaces (cards, etc.). |
+| `--line` | `#262c32` | Subtle hairline borders. |
+| `--line-strong` | `#3a424a` | Stronger borders (buttons, chips, dim-rule). |
+| `--text-hi` | `#e9ecef` | Headings, high-emphasis text. |
+| `--text` | `#b4bcc4` | Body text. |
+| `--text-dim` | `#7e8790` | Kickers, captions, secondary text. |
+| `--accent` | `#4da3ff` | Links, focus rings, solid-button fill. |
+| `--accent-hi` | `#85c2ff` | Hover state for accent elements. |
+| `--accent-wash` | `rgba(77,163,255,.10)` | Faint accent fill (chips, selection, hover backgrounds). |
+
+**Type scale:** fluid, `clamp()`-based steps `--step--1` through `--step-3` (smallest to largest), so headings/body scale smoothly with viewport width instead of jumping at breakpoints.
+
+**Spacing:** `--space-1` (0.25rem) through `--space-7` (6.5rem), used consistently instead of one-off margin/padding values.
+
+**Fonts:** self-hosted, no external font CDN — `assets/fonts/InterVariable.woff2` (variable weight, UI font) and `assets/fonts/JetBrainsMono-{Regular,Medium}.woff2` (monospace, used for kickers, labels, chips, nav). Font Awesome (icons only) is still loaded from a CDN in `_layouts/wrapper.html`.
+
+**Signature components:**
+
+- `_includes/section-heading.html` — takes `number` (e.g. `"01"`) and `title`, and an optional `label`; renders a mono kicker + heading + a `.dim-rule` divider.
+- `.dim-rule` — the horizontal "dimension line" divider (CSS-drawn, no image), optionally with a centered label.
+- `.chip` — small mono-font pill used for skills tags.
+- `.btn` / `.btn--solid` — outline and filled button styles.
+
+**Scroll reveal:** add the `reveal` class to an element and it fades/slides in as it enters the viewport, implemented with pure CSS `animation-timeline: view()` (no JS/IntersectionObserver). It's scoped inside `@media (prefers-reduced-motion: no-preference)`, so it's automatically inert for users who prefer reduced motion, and degrades gracefully (element just renders normally) in browsers without scroll-driven-animation support.
+
+**Changing the accent color:** edit the single `--accent` (and optionally `--accent-hi` / `--accent-wash`) token in `css/styles.css` — every link, focus ring, chip wash, and solid button derives from it.
+
+## Changing the hero image
+
+Replace `assets/images/hero/hero-space.jpg` (referenced from `_includes/hero.html` and preloaded in `_layouts/wrapper.html`). Recommended: ~1920px wide, kept well under ~400 KB for a fast LCP. A `hero-space-mobile.jpg` variant also exists in the same folder for future responsive use, though nothing in the current templates references it yet — wire it up (e.g. `<picture>`/`image-set()`) if you want an actual mobile-optimized swap.
+
+Current hero image credit: NASA, ESA, CSA — *Cosmic Cliffs* (Carina Nebula), James Webb Space Telescope. NASA/ESA/CSA Webb imagery is public domain.
+
+## Deployment
+
+`.github/workflows/jekyll.yml` builds and deploys the site via GitHub Actions:
+
+- Triggers on every push to `main`, and can also be run manually from the Actions tab (`workflow_dispatch`).
+- Builds with `bundle exec jekyll build --baseurl "..."` under `JEKYLL_ENV=production`, then publishes `_site/` to GitHub Pages via `actions/deploy-pages`.
+- Work-in-progress redesign work happens on the `redesign` branch; merge to `main` to trigger a production deploy.
+
+## Credits
+
+- Built on the [Free-To-Engineer](https://github.com/leea12/freeToEngineer) portfolio template, © [lowinertia.com](https://lowinertia.com), licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The current site is a full visual and structural redesign of that template.
+- Hero image: NASA, ESA, CSA — *Cosmic Cliffs* (Carina Nebula), James Webb Space Telescope (public domain).
+- Fonts: [Inter](https://rsms.me/inter/) and [JetBrains Mono](https://www.jetbrains.com/lp/mono/), both self-hosted.
+- Icons: [Font Awesome](https://fontawesome.com/).
+- 3D viewer: [`<model-viewer>`](https://modelviewer.dev/) (Google).
