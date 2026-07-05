@@ -1,8 +1,8 @@
 ---
 layout: post
 order: 10
-title: "WordleBot: Layered RL Decision Making and Robot Motion Control"
-description: Integrated UR3e Wordle-playing robot with a high-level MaskablePPO decision model, ROS 2 task sequencing, and low-level MoveIt 2 pick-and-place control.
+title: "WordleBot: Hierarchial High Level RL Decision Making and Low Level Robot Motion Control System"
+description: Integrated UR3e Wordle-playing robot with a high-level MaskablePPO decision model, ROS 2 task sequencing, and low-level MoveIt 2 pick-and-place control system.
 skills:
   - ROS 2
   - UR3e
