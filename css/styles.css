@@ -877,7 +877,7 @@ a:hover {
    -------------------------------------------------------------------------- */
 .home-about {
   display: grid;
-  grid-template-columns: minmax(240px, 340px) 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 280px);
   gap: var(--space-6);
   align-items: center;
   border-top: 1px solid var(--line);
@@ -886,14 +886,18 @@ a:hover {
 }
 
 .home-about__media {
-  width: min(100%, 340px);
+  --profile-size: 220px;
+  --profile-x: 50%;
+  --profile-y: 30%;
+  width: min(100%, var(--profile-size));
+  justify-self: end;
 }
 
 .home-about__media img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  object-position: 50% 30%;
+  object-position: var(--profile-x) var(--profile-y);
   border: 1px solid var(--line-strong);
   border-radius: 50%;
   background: var(--bg-1);
@@ -904,11 +908,30 @@ a:hover {
   max-width: 72ch;
 }
 
+.home-about__title {
+  color: var(--text-hi);
+  font-size: var(--step-1);
+  margin-bottom: var(--space-3);
+}
+
 .home-about__copy p {
   margin-bottom: var(--space-3);
 }
 
 .home-about__copy p:last-child {
+  margin-bottom: 0;
+}
+
+.home-about__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.home-about__cta p {
+  color: var(--text-hi);
   margin-bottom: 0;
 }
 
@@ -926,7 +949,8 @@ a:hover {
   }
 
   .home-about__media {
-    max-width: 280px;
+    width: min(100%, var(--profile-size));
+    justify-self: start;
   }
 
   .about-intro {

@@ -9,10 +9,8 @@ hero: true
     <section class="section" id="about">
         {% include section-heading.html number="01" title="About Me" %}
         <div class="home-about reveal">
-            <div class="home-about__media">
-                <img src="/assets/images/profile-image/Image.jpg" alt="{{ site.name }}">
-            </div>
             <div class="home-about__copy">
+                <h3 class="home-about__title">Undergraduate Engineer</h3>
                 <p>
                     I'm {{ site.name }}, a mechanical and mechatronic engineer working across robotics,
                     mechanical design, and applied manufacturing. My work sits where ideas become
@@ -27,6 +25,13 @@ hero: true
                     mechanisms that survive real tolerances, parts that assemble cleanly, and
                     systems validated with evidence rather than assumptions.
                 </p>
+                <div class="home-about__cta">
+                    <p>If you want to learn more about me and my experience, click below.</p>
+                    <a class="btn btn--solid" href="/about/">About Me</a>
+                </div>
+            </div>
+            <div class="home-about__media" style="--profile-size: 220px; --profile-x: 50%; --profile-y: 30%;">
+                <img src="/assets/images/profile-image/Image.jpg" alt="{{ site.name }}">
             </div>
         </div>
     </section>
