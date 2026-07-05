@@ -142,6 +142,16 @@ plugins:
 
 exclude:
   - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - vendor/bundle
+  - vendor/cache
+  - vendor/gems
+  - vendor/ruby
+  - node_modules
+  - .sass-cache
+  - .jekyll-cache
 
 include:
   - _projects
